@@ -25,12 +25,9 @@ f = linspace(-Fs/2, Fs/2, length(t));
 H = double(abs(f) <= B);
 
 % % Apply the channel to the signal in frequency domain
-% square_pulse_0_fft = fftshift(fft(square_pulse_0).*exp(i*2*pi*f*T/2));
 
 square_pulse_0_fft = fftshift(fft(square_pulse_0));
 square_pulse_1_fft = fftshift(fft(square_pulse_1));
-
-
 
 filtered_pulse_0_fft = square_pulse_0_fft .* H;
 filtered_pulse_0 = ifft(ifftshift(filtered_pulse_0_fft));
@@ -40,7 +37,7 @@ filtered_pulse_1 = ifft(ifftshift(filtered_pulse_1_fft));
 
 
 
-%% Plotting Ground (For Testing)
+%% Plotting time domain signals.
 
 figure
 subplot(2,1,1)

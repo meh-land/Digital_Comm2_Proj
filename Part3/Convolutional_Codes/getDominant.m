@@ -1,6 +1,8 @@
 function [pred, dominantValue]= getDominant(nodeValue)
     nodeR = real(nodeValue);
     nodeI = imag(nodeValue);
+    pred = 0;
+    dominantValue = 0;
     if nodeR < 0 && nodeI < 0
         dominantValue = nodeValue;
         pred = 0;

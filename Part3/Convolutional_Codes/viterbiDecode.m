@@ -69,7 +69,7 @@ function decodedBits = viterbiDecode(encodedBits)
     currElemR = minPMRow;
     currElemC = s(2);
     % Calculate the path from beggining to optimum node
-    while currElemC ~= 1
+    while currElemC > 1
         currPredRow = getPredecessorRow(currElemR, predMatrix(currElemR, currElemC));
         currEdge = [currPredRow currElemR];
         edges = [currEdge; edges];

@@ -1,5 +1,16 @@
-N_bits = 10000; % Total number of bits
-p      = 0.2;   % Channel parameter (probability of bit flipping)
+%% Part 3: Comparisons of Coding Techniques (Repetition Code)
 
-% Generate a bit sequence
-bit_seq = GenerateBits(N_bits); 
+%% Prerequisites
+clc;
+clear;
+close all;
+
+%% Define Essential Parameters
+% Total number of bits
+N_bits = 10000; 
+
+% Channel parameter (probability of bit flipping)
+p      = 0.2;   
+
+%% Generate a bit sequence
+bit_seq = GenerateBits(N_bits);

@@ -1,13 +1,15 @@
-function sample_seq = GenerateSamples(bit_seq,fs)
-%
+%% Function Name: GenerateSamples
 % Inputs:
-%   bit_seq:    Input bit sequence
-%   fs:         Number of samples per bit
+    %   bit_seq:    Input bit sequence
+    %   fs:         Number of samples per bit
 % Outputs:
-%   sample_seq: The resultant sequence of samples
-%
-% This function takes a sequence of bits and generates a sequence of
-% samples as per the input number of samples per bit
+    %   sample_seq: The resultant sequence of samples
+% Description:
+    % This function takes a sequence of bits and generates a sequence of
+    % samples as per the input number of samples per bit
+
+%% Function Implementation
+function sample_seq = GenerateSamples(bit_seq,fs)
 
     sample_seq = [];
 
@@ -18,4 +20,5 @@ function sample_seq = GenerateSamples(bit_seq,fs)
             sample_seq = [sample_seq zeros(1, fs)];
         end
     end
+    
 end

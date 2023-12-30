@@ -1,16 +1,17 @@
-function rec_bit_seq = DecodeBitsFromSamples(rec_sample_seq,fs)
-%
+%% Function Name: DecodeBitsFromSamples
 % Inputs:
-%   rec_sample_seq: The input sample sequence to the channel
-%   case_type:      The sampling frequency used to generate the sample sequence
-%   fs:             The bit flipping probability
+    %   rec_sample_seq: The input sample sequence to the channel
+    %   case_type:      The sampling frequency used to generate the sample sequence
+    %   fs:             The bit flipping probability
 % Outputs:
-%   rec_sample_seq: The sequence of sample sequence after passing through the channel
-%
-% This function takes the sample sequence after passing through the
-% channel, and decodes from it the sequence of bits based on the considered
-% case and the sampling frequence
-
+    %   rec_sample_seq: The sequence of sample sequence after passing through the channel
+% Description:
+    % This function takes the sample sequence after passing through the
+    % channel, and decodes from it the sequence of bits based on the considered
+    % case and the sampling frequence
+    
+%% Function Implementation
+function rec_bit_seq = DecodeBitsFromSamples(rec_sample_seq,fs)
 
         samples_length = length(rec_sample_seq);
         bits_length = samples_length / fs;
@@ -22,4 +23,5 @@ function rec_bit_seq = DecodeBitsFromSamples(rec_sample_seq,fs)
             window_avg = sum(window)/fs;
             rec_bit_seq(bits_ind) = (window_avg >= 0.5) * 1;
         end
- 
+        
+end

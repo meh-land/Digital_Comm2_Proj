@@ -5,7 +5,7 @@
 
 clc;
 close all;
-clear all;
+clear;
 
 % Define parameters
 B = 100e3; % Bandwidth of the channel in Hz

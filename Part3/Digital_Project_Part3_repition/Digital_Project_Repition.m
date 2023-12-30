@@ -24,7 +24,7 @@ bit_seq = GenerateBits(N_bits);
 %% Generate Samples
 sample_seq = GenerateSamples(bit_seq,fs);
 
-%% Encoding && Decoding
+%% Encoding && Decoding (BSC)
 for i=1:1:5
     % Sampled binary sequence pass through BSC @ different P's
     rec_sample_seq = BSC(sample_seq,fs,p(i));

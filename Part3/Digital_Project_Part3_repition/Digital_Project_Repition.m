@@ -16,7 +16,8 @@ p = 0:0.1:0.5;
 fs = 10;
 
 % BER
-BER = [];
+BER_BSC = [];
+BER_BEC = [];
 
 %% Generate a bit sequence
 bit_seq = GenerateBits(N_bits);
@@ -32,5 +33,15 @@ for i=1:1:5
     rec_bit_seq = DecodeBitsFromSamples(rec_sample_seq,fs);
     % Calculating BER
     temp = ComputeBER(bit_seq,rec_bit_seq);
-    BER = [BER temp];
+    BER_BSC = [BER_BSC temp];
+end
+%% Encoding && Decoding (BEC)
+for i=1:1:5
+    % Sampled binary sequence pass through BSC @ different P's
+    rec_sample_seq = BEC(sample_seq,fs,p(i));
+    % Decoding the received samples @ different P's
+    rec_bit_seq = DecodeBitsFromSamples(rec_sample_seq,fs);
+    % Calculating BER
+    temp = ComputeBER(bit_seq,rec_bit_seq);
+    BER_BEC = [BER_BEC temp];
 end

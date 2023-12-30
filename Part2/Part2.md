@@ -11,5 +11,5 @@ Implements an optimal receiver with inverse H (channel coefficients matrix) and 
 ## MultiPathBench
 Computes the BER for various SNRs and compares them
 
-![Part2](Part2/Bench.JPG)
+![Part2](Bench.JPG)
 

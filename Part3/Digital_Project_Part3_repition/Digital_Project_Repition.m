@@ -10,7 +10,7 @@ close all;
 N_bits = 5; 
 
 % Channel parameter (probability of bit flipping)
-p = 0:0.1:0.5;   
+p = 0:0.05:0.5;   
 
 % Sampling frequency
 fs = 10;
@@ -26,7 +26,7 @@ bit_seq = GenerateBits(N_bits);
 sample_seq = GenerateSamples(bit_seq,fs);
 
 %% Encoding && Decoding (BSC)
-for i=1:1:5
+for i=1:1:10
     % Sampled binary sequence pass through BSC @ different P's
     rec_sample_seq = BSC(sample_seq,fs,p(i));
     % Decoding the received samples @ different P's
@@ -36,7 +36,7 @@ for i=1:1:5
     BER_BSC = [BER_BSC temp];
 end
 %% Encoding && Decoding (BEC)
-for i=1:1:5
+for i=1:1:10
     % Sampled binary sequence pass through BSC @ different P's
     rec_sample_seq = BEC(sample_seq,fs,p(i));
     % Decoding the received samples @ different P's

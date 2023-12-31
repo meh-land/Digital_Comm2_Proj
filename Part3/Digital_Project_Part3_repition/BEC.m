@@ -1,9 +1,8 @@
-%% Function Name: BSC
+%% Function Name: BEC
 % Inputs:
     %   sample_seq:     The input sample sequence to the channel
     %   fs:             The sampling frequency used to generate the sample sequence
     %   p:              The bit flipping probability
-    %   channel_type:   The type of channel, 'independent' or 'correlated'
 % Outputs:
     %   rec_sample_seq: The sequence of sample sequence after passing through the channel
 % Description:
@@ -12,7 +11,7 @@
     % and parameters
     
 %% Function Implementation
-function rec_sample_seq  = BSC(sample_seq,fs,p)
+function rec_sample_seq  = BEC(sample_seq,fs,p)
 
     sample_seq      = ~~sample_seq;
     rec_sample_seq  = zeros(size(sample_seq));
